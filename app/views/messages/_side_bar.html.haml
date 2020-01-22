@@ -1,0 +1,19 @@
+.side_bar
+  .user
+    .user__area
+      %p.user__area__name
+        user-name
+      .user__area__item
+        .user__area__item__edit-user
+          = link_to "#" do
+            = icon('fa', 'edit')
+        .user__area__item__new-group
+          = link_to "#" do
+            = icon('fa', 'cog')     
+  .group
+    = link_to "#" do
+      .group-area
+        %p.group-area__group-name
+          group-name
+        %p.group-area__group-messages
+          group-messages
