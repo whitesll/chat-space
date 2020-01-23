@@ -1,0 +1,42 @@
+.main_chat
+  .area
+    .area__box
+      %h2.area__box__group-name
+        group-name
+      %ul.area__box__menber
+        Menber:
+        %li.area__box__menber__name
+          user-name
+    .area__edit
+      = link_to "#" do
+        Edit
+  .message-list
+    .message-list__area
+      %p.message-list__area__name
+        user-name
+      %p.message-list__area__date
+        2020/01/21
+    %p.message-list__text
+      text
+    .message-list__area
+      %p.message-list__area__name
+        user-name
+      %p.message-list__area__date
+        2020/01/21
+    %p.message-list__text
+      text
+    .message-list__area
+      %p.message-list__area__name
+        user-name
+      %p.message-list__area__date
+        2020/01/21
+    %p.message-list__text
+      text
+  .message-form
+    %form.message
+      .message-area
+        %input{type: "text",class: "message-area__input-text",placeholder: "type a message"}
+        %label{class: "message-area__image"} 
+          = icon('fa', 'image')
+          %input{type: "file",class: "message-area__image__file"}
+      %input{type: "submit",value: "Send",class: "btn"}
