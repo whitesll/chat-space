@@ -31,10 +31,17 @@ $(function() {
   }
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
+    var input_ids = $('input:hidden[name="group[user_ids][]"]'), len = input_ids.length, member_ids = [];
+    for(var i = 0; i < len; i++){
+      member_ids.push(input_ids[i].value);
+    }
     $.ajax({
       type: "GET",
       url: "/users",
-      data: { keyword: input },
+      data: {
+        keyword: input,
+        member_ids: member_ids
+       },
       dataType: "json"
     })
       .done(function(users) {
@@ -55,7 +62,6 @@ $(function() {
       });
   });
   $(document).on("click", ".chat-group-user__btn--add", function() {
-    console.log
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this)
