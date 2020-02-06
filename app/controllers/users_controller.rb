@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.search(params[:keyword], current_user.id)
+    @users = User.search(params[:keyword], params[:member_ids])
     respond_to do |format|
       format.html
       format.json

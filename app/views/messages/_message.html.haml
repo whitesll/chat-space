@@ -6,7 +6,7 @@
       = message.created_at.to_s
   .message-text
     - if message.content.present?
-      %p.message-text__text
+      %p.message-text__text{data: {message: {id: message.id}}}
         = message.content
     = image_tag message.image.url, class: 'lmessage-list__text__image' if message.image.present?
 
